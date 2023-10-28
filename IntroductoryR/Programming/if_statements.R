@@ -39,7 +39,7 @@ ai_2020 <-
   read_csv("AI_Data_2020.csv")
 View(ai_2020)
 if ("Code" %in% colnames(ai_2020)) {
-  i <- which (colnames(ai_2020 == "Code"))
+  i <- which (colnames(ai_2020) == "Code")
   ai_2020 <- ai_2020[, -i]
 }
 
