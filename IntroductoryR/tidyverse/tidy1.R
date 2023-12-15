@@ -36,7 +36,7 @@ View(ai_invest_millions)
 
 # Use the pipe command to add a column called InvestMillions, filter the
 # table for the year 2021, and select only the Entity and InvestMillions columns.
-invest_millions_2021 <- ai_data %>% mutate(InvestMillions = round(Invest / 1000000, digits=0)) %>% filter(Year == 2021) %>% select(Entity, InvestMillions)
+invest_millions_2021 <- ai_data |> mutate(InvestMillions = round(Invest / 1000000, digits=0)) |> filter(Year == 2021) |> select(Entity, InvestMillions)
 View(invest_millions_2021)
 
 
