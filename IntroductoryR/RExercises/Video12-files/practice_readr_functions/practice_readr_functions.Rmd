@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::include_graphics("images/reading_files.jpg")
 ```
 
-*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) Introductory R video 12 on reading data from files in R.*
+*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 12 on reading data from files in R](https://youtu.be/fi7OqlYkuyk).*
 
-*If you haven't already watched the video, you might want to watch it first before trying these
+*If you haven't already watched [the video](https://youtu.be/fi7OqlYkuyk), you might want to watch it first before trying these
 exercises.*
 
 *Here are the sources for the data you'll be reading in:
