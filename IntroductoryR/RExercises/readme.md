@@ -6,7 +6,7 @@ To run these exercises, you should install whatever libraries are needed for the
 You can install learnr in the usual way:
 install.packages("learnr")
 
-To install grade this, type the following at the console:
+To install gradethis, type the following at the console:
 install.packages("remotes")
 remotes::install_github("rstudio/gradethis")
 
