@@ -1,0 +1,248 @@
+---
+title: "Conditional (if) statements in R"
+output: learnr::tutorial
+allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(readr)
+knitr::opts_chunk$set(echo = FALSE)
+ai_invest <- read_csv("data/private-investment-in-artificial-intelligence-by-focus-area.csv", skip = 1, col_names = c("Entity", "Code", "Year", "Invest"))
+```
+
+## Welcome!
+
+```{r fig.margin = TRUE, echo = FALSE, fig.width=3, out.width="100%", fig.align="right"}
+knitr::include_graphics("images/conditionals.jpg")
+```
+
+
+*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 6 on if statements in R](https://youtu.be/74i3PVzVuOE).*
+
+*If you haven't already watched [the video](https://youtu.be/74i3PVzVuOE), you might want to watch it first before trying these exercises.*
+
+*Here is the source for the data we're working with:
+[Our World in Data's artificial intelligence data](https://ourworldindata.org/artificial-intelligence)
+Daniel Zhang, Nestor Maslej, Erik Brynjolfsson, John Etchemendy, Terah Lyons, 
+James Manyika, Helen Ngo, Juan Carlos Niebles, Michael Sellitto, Ellie Sakhaee, 
+Yoav Shoham, Jack Clark, and Raymond Perrault, “The AI Index 2022 Annual 
+Report,” AI Index Steering Committee, Stanford Institute for Human-Centered AI, 
+Stanford University, March 2022.
+*
+
+## Simple if-else statement
+
+*Let's practice writing an if/else statement -- a statement that will execute one block of code
+if the condition evaluates to TRUE, and another block of code if it evaluates to FALSE.*
+
+Print a message if num is greater than one billion and a different message otherwise.
+If num is greater than one billion, print "The value is greater than one billion."
+If it isn't, print "The value is not greater than one billion."
+
+
+```{r simple_if, exercise=TRUE}
+num <- ai_invest[1, 4]
+
+```
+
+``` {r simple_if-hint-1}
+Remember to write if, followed by a condition in (), and then
+the conditional code in {}.
+```
+
+``` {r simple_if-hint-2}
+After your closing curly brace, write else and, in {},
+the code that should execute if the condition is FALSE.
+```
+
+
+``` {r simple_if-hint-3}
+Use the greater than sign (right angle bracket) to check if the number is greater than one billion.
+```
+
+
+``` {r simple_if-solution}
+num <- ai_invest[1, 4]
+if (num > 1000000000) {
+  print("The value is greater than one billion.")
+} else {
+  print("The value is not greater than one billion.")
+}
+```
+
+
+``` {r simple_if-check}
+   grade_this_code()
+```
+
+## Use the %in% operator
+
+*Let's test if certain column names are part of our ai_invest dataframe.  We can use
+the %in% operator to test if a value is contained in a vector.  The colnames(df) function
+returns a vector of the column names of the dataframe passed as an argument (df).*
+
+Write a line of code to check if the name "Year" is a column in the dataframe ai_invest.
+Print "Year is a column name." if it is, and print "Year is not a column name." if it is not.
+
+```{r use_in1, exercise=TRUE}
+
+
+```
+
+
+``` {r use_in1-hint-1}
+As before, use if followed by a condition in parentheses (),
+followed by the code that should execute if the condition is TRUE
+in {}.
+```
+
+``` {r use_in1-hint-2}
+As before, use else immediately after the } of the if block, 
+followed by the code that should execute if the condition is FALSE
+enclosed in {}.
+```
+
+
+``` {r use_in1-hint-3}
+Did you remember to put the column name "Year" in quotes?  It begins
+with an uppercase Y.  Is it spelled and typed correctly?
+```
+
+``` {r use_in1-hint-4}
+The vector of column names is colnames(ai_invest).
+```
+
+
+```{r use_in1-solution}
+if ("Year" %in% colnames(ai_invest)) {
+  print("Year is a column name.")
+} else {
+   print("Year is not a column name.")
+}
+```
+
+``` {r use_in1-check}
+   grade_this_code()
+```
+
+
+## Use the %in% operator and which
+
+*Let's figure out the index of the column called "Invest" and display it, or display zero if it's not in the dataframe. This code will be similar to the prior code, but we won't be printing.*
+
+Write a line of code to check if the name "Invest" is a column in the dataframe ai_invest.
+The if code should print the index of the column if it is, and should print zero (the number, not the word) if it is not.
+
+```{r use_in2, exercise=TRUE}
+
+
+```
+
+
+``` {r use_in2-hint-1}
+As before, use if followed by a condition in parentheses (),
+followed by the code that should execute if the condition is TRUE
+in {}.
+```
+
+``` {r use_in2-hint-2}
+As before, use else immediately after the } of the if block, 
+followed by the code that should execute if the condition is FALSE
+enclosed in {}.
+```
+
+
+``` {r use_in2-hint-3}
+Did you remember to put the column name "Invest" in quotes?  It begins
+with an uppercase I.  Is it spelled and typed correctly?
+```
+
+``` {r use_in2-hint-4}
+The vector of column names is colnames(ai_invest).
+```
+
+
+``` {r use_in2-hint-5}
+To find the index (or indices) of a value (or values) in a vector, 
+use which and the logical condition.  For example,
+x <- c(1, 2, 3, 1, 2)
+which(x == 1)
+Would result in 
+[1] 1 4
+```
+
+
+``` {r use_in2-hint-6}
+The logical condition you want to use in which is
+colnames(ai_invest) == "Invest"
+Be sure to use two equal signs!
+```
+
+
+```{r use_in2-solution}
+if ("Invest" %in% colnames(ai_invest)) {
+  print(which (colnames(ai_invest) == "Invest"))
+} else {
+   print(0)
+}
+```
+
+``` {r use_in2-check}
+   grade_this_code()
+```
+
+
+## Use the ternary ifelse operator
+
+*We can use the ifelse operator to test each value in a vector and return a vector with different values depending on whether the test evaluated to TRUE or FALSe.*
+
+Write a line of code to create a vector of the values "BIG" and "SMALL" using the ifelse
+operator on the fourth column (the Invest column) of the ai_invest dataframe.  The resulting
+vector should contain the word "BIG" if the value in the ai_invest column is greater than
+one billion, and "SMALL" if it is less than or equal to one billion. 
+
+Call the vector over_billion.  After your line of code evaluate your vector.  In other words, the 
+last line of your code should be:
+over_billion
+
+
+```{r use_ifelse, exercise=TRUE}
+
+
+```
+
+
+``` {r use_ifelse-hint-1}
+Follow ifelse with parentheses.  In the parentheses, put the condition first,
+then a comma, then the value that the expression should evaluate to if the
+condition is TRUE, then a comma, then the value that the expression should
+evaluate to if the condition is FALSE.
+```
+
+``` {r use_ifelse-hint-2}
+An example of an ifelse is:
+x <- c(1, 2, 3, 4, 5)
+y <- ifelse(x>3, "BIGGER", "SMALLER")
+```
+
+
+``` {r use_ifelse-hint-3}
+We are interested in the vector that is the fourth column of ai_invest.
+```
+
+
+```{r use_ifelse-solution}
+
+over_billion <- ifelse(ai_invest[4] > 1000000000, "BIG", "SMALL")
+over_billion
+```
+
+``` {r use_ifelse-check}
+   grade_this_code()
+```
+
+
+
