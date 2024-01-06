@@ -19,9 +19,9 @@ knitr::include_graphics("images/paths.jpg")
 ```
 
 
-*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 13 on paths, directories, and projects in R]().*
+*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 13 on paths, directories, and projects in R](https://youtu.be/lJcuXBFP7Co).*
 
-*If you haven't already watched [the video](), you might want to watch it first before trying these exercises.*
+*If you haven't already watched [the video](https://youtu.be/lJcuXBFP7Co), you might want to watch it first before trying these exercises.*
 
 *Here is the source for the data you'll be reading in: AI expenditures from 2017 to 2021, by category, from [Our World in Data](https://ourworldindata.org/artificial-intelligence)*
 
