@@ -42,12 +42,14 @@ View(retidied)
 # The World Happiness Report is composed of separate tables for every year.
 # Read them in and put the names in the format of lowercase letters with words
 # separated by underscores, then mutate each table to add a column for the year.
-whr_2015 <- read_xlsx("WHR_2015.xlsx") 
-whr_2016 <- read_xlsx("WHR_2016.xlsx") 
-whr_2017 <- read_xlsx("WHR_2017.xlsx")
+whr_2015 <- read_xlsx("WHR_2015.xlsx") |> clean_names() |> mutate(year = 2015)
+whr_2016 <- read_xlsx("WHR_2016.xlsx") |> clean_names() |> mutate(year = 2016)
+whr_2017 <- read_xlsx("WHR_2017.xlsx") |> clean_names() |> mutate(year = 2017)
+
 
 # Combine the tables with full_join.
-
+whr_all <- full_join(whr_2015, whr_2016) |> full_join(whr_2017)
+View(whr_all)
 
 # If you want to select only the columns from a dataframe that are found in all
 # of the dataframes, you can use code like this (to modify the whr_2015 dataframe).
