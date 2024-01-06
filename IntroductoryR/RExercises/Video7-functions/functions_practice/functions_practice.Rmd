@@ -1,5 +1,5 @@
 ---
-title: "Conditional (if) statements in R"
+title: "Functions in R"
 output: learnr::tutorial
 allow_skip: true
 runtime: shiny_prerendered
