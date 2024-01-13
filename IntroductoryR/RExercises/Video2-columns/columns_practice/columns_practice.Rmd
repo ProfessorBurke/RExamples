@@ -150,7 +150,7 @@ grade_this_code()
 
 ## A few questions...
 
-We talked about a few other things in the videos.  Answer the questions below to test your knowledge.
+We talked about a few other things in the video.  Answer the questions below to test your knowledge.
 
 ```{r quiz}
 quiz(
