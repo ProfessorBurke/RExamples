@@ -1,0 +1,219 @@
+continent,location,date,total_cases_per_million,total_deaths
+Asia,Afghanistan,2023-02-16,5083.351,7896
+Europe,Albania,2023-02-16,117605.771,3596
+Africa,Algeria,2023-02-16,6044.643,6881
+Europe,Andorra,2023-02-16,599501.522,165
+Africa,Angola,2023-02-16,2955.52,1931
+North America,Anguilla,2023-02-16,245890.282,12
+North America,Antigua and Barbuda,2023-02-16,97107.879,146
+South America,Argentina,2023-02-16,220656.219,130448
+Asia,Armenia,2023-02-16,160523.825,8719
+North America,Aruba,2023-02-16,413548.878,282
+Oceania,Australia,2023-02-16,433329.08,19202
+Europe,Austria,2023-02-16,654315.727,21799
+Asia,Azerbaijan,2023-02-16,79965.801,10101
+North America,Bahamas,2023-02-16,91443.917,833
+Asia,Bahrain,2023-02-16,476034.09,1544
+Asia,Bangladesh,2023-02-16,11903.576,29445
+North America,Barbados,2023-02-16,377899.917,573
+Europe,Belarus,2023-02-16,104251.871,7118
+Europe,Belgium,2023-02-16,403309.888,33616
+North America,Belize,2023-02-16,174496.959,688
+Africa,Benin,2023-02-16,2096.18,163
+North America,Bermuda,2023-02-16,292662.794,159
+Asia,Bhutan,2023-02-16,80018.455,21
+South America,Bolivia,2023-02-16,97487.065,22358
+North America,Bonaire Sint Eustatius and Saba,2023-02-16,436086.056,41
+Europe,Bosnia and Herzegovina,2023-02-16,124172.653,16267
+Africa,Botswana,2023-02-16,125306.999,2801
+South America,Brazil,2023-02-16,171705.501,698018
+North America,British Virgin Islands,2023-02-16,233148.219,64
+Asia,Brunei,2023-02-16,617905.934,225
+Europe,Bulgaria,2023-02-16,191112.887,38201
+Africa,Burkina Faso,2023-02-16,972.754,396
+Africa,Burundi,2023-02-16,4159.095,38
+Asia,Cambodia,2023-02-16,8272.08,3056
+Africa,Cameroon,2023-02-16,4441.878,1965
+North America,Canada,2023-02-16,119351.169,51119
+Africa,Cape Verde,2023-02-16,106609.999,413
+North America,Cayman Islands,2023-02-16,457961.061,37
+Africa,Central African Republic,2023-02-16,2754.542,113
+Africa,Chad,2023-02-16,432.256,194
+South America,Chile,2023-02-16,262410.185,64040
+Asia,China,2023-02-16,1419.4,87468
+South America,Colombia,2023-02-16,122536.619,142296
+Africa,Comoros,2023-02-16,10751.891,161
+Africa,Congo,2023-02-16,4199.53,388
+Oceania,Cook Islands,2023-02-16,412165.336,2
+North America,Costa Rica,2023-02-16,230577.459,9195
+Africa,Cote d'Ivoire,2023-02-16,3128.171,834
+Europe,Croatia,2023-02-16,314724.165,17937
+North America,Cuba,2023-02-16,99225.415,8530
+North America,Curacao,2023-02-16,240546.521,301
+Europe,Cyprus,2023-02-16,720435.22,1293
+Europe,Czechia,2023-02-16,438254.849,42368
+Africa,Democratic Republic of Congo,2023-02-16,966.022,1464
+Europe,Denmark,2023-02-16,578349.406,8221
+Africa,Djibouti,2023-02-16,13998.292,189
+North America,Dominica,2023-02-16,216608.483,74
+North America,Dominican Republic,2023-02-16,58821.135,4384
+South America,Ecuador,2023-02-16,58695.51,36008
+Africa,Egypt,2023-02-16,4646.342,24809
+North America,El Salvador,2023-02-16,31845.405,4230
+Africa,Equatorial Guinea,2023-02-16,10277.53,183
+Africa,Eritrea,2023-02-16,2765.713,103
+Europe,Estonia,2023-02-16,463437.662,2926
+Africa,Eswatini,2023-02-16,61711.937,1423
+Africa,Ethiopia,2023-02-16,4051.169,7572
+Europe,Faeroe Islands,2023-02-16,652484.139,28
+South America,Falkland Islands,2023-02-16,507761.115,NA
+Oceania,Fiji,2023-02-16,74078.615,883
+Europe,Finland,2023-02-16,263788.173,8859
+Europe,France,2023-02-16,584232.389,164753
+Oceania,French Polynesia,2023-02-16,254518.564,649
+Africa,Gabon,2023-02-16,20502.747,306
+Africa,Gambia,2023-02-16,4651.154,372
+Asia,Georgia,2023-02-16,486607.28,16950
+Europe,Germany,2023-02-16,455641.393,167214
+Africa,Ghana,2023-02-16,5112.698,1462
+Europe,Gibraltar,2023-02-16,624720.752,111
+Europe,Greece,2023-02-16,534280.401,34779
+North America,Greenland,2023-02-16,211898.609,21
+North America,Grenada,2023-02-16,156863.995,238
+North America,Guatemala,2023-02-16,69108.885,20154
+Africa,Guinea,2023-02-16,2761.096,467
+Africa,Guinea-Bissau,2023-02-16,4252.035,176
+South America,Guyana,2023-02-16,90329.617,1298
+North America,Haiti,2023-02-16,2947.172,860
+North America,Honduras,2023-02-16,45199.216,11109
+Asia,Hong Kong,2023-02-16,384051.09,13433
+Europe,Hungary,2023-02-16,220129.937,48738
+Europe,Iceland,2023-02-16,560255.616,211
+Asia,India,2023-02-16,31531.704,530757
+Asia,Indonesia,2023-02-16,24441.612,160880
+Asia,Iran,2023-02-16,85445.697,144793
+Asia,Iraq,2023-02-16,55410.332,25375
+Europe,Ireland,2023-02-16,338938.163,8629
+Europe,Isle of Man,2023-02-16,449617.905,116
+Asia,Israel,2023-02-16,507274.209,12246
+Europe,Italy,2023-02-16,432252.028,187551
+North America,Jamaica,2023-02-16,54490.338,3500
+Asia,Japan,2023-02-16,266741.852,71316
+Asia,Jordan,2023-02-16,154794.998,14122
+Asia,Kazakhstan,2023-02-16,77196.059,19068
+Africa,Kenya,2023-02-16,6346.288,5688
+Oceania,Kiribati,2023-02-16,38190.449,18
+Europe,Kosovo,2023-02-16,153069.808,3206
+Asia,Kuwait,2023-02-16,155276.576,2570
+Asia,Kyrgyzstan,2023-02-16,31160.128,2991
+Asia,Laos,2023-02-16,28953.671,758
+Europe,Latvia,2023-02-16,527239.56,6251
+Asia,Lebanon,2023-02-16,224157.811,10810
+Africa,Lesotho,2023-02-16,15087.869,723
+Africa,Liberia,2023-02-16,1520.926,294
+Africa,Libya,2023-02-16,74448.677,6437
+Europe,Liechtenstein,2023-02-16,543437.937,89
+Europe,Lithuania,2023-02-16,473203.838,9560
+Europe,Luxembourg,2023-02-16,487460.643,1214
+Asia,Macao,2023-02-16,5049.052,121
+Africa,Madagascar,2023-02-16,2291.289,1421
+Africa,Malawi,2023-02-16,4343.966,2686
+Asia,Malaysia,2023-02-16,148515.997,36954
+Asia,Maldives,2023-02-16,354569.891,311
+Africa,Mali,2023-02-16,1454.748,743
+Europe,Malta,2023-02-16,219856.627,826
+Oceania,Marshall Islands,2023-02-16,375015.027,17
+Africa,Mauritania,2023-02-16,13442.787,997
+Africa,Mauritius,2023-02-16,227138.128,1044
+North America,Mexico,2023-02-16,58154.34,332695
+Oceania,Micronesia (country),2023-02-16,207316.646,60
+Europe,Moldova,2023-02-16,183598.315,11964
+Europe,Monaco,2023-02-16,441314.297,67
+Asia,Mongolia,2023-02-16,296581.629,2136
+Europe,Montenegro,2023-02-16,458064.496,2800
+North America,Montserrat,2023-02-16,317924.315,8
+Africa,Morocco,2023-02-16,33967.692,16296
+Africa,Mozambique,2023-02-16,7061.644,2237
+Asia,Myanmar,2023-02-16,11699.613,19490
+Africa,Namibia,2023-02-16,66637.086,4090
+Oceania,Nauru,2023-02-16,403514.301,1
+Asia,Nepal,2023-02-16,32772.639,12020
+Europe,Netherlands,2023-02-16,489568.789,23081
+Oceania,New Caledonia,2023-02-16,275925.217,314
+Oceania,New Zealand,2023-02-16,424340.476,2513
+North America,Nicaragua,2023-02-16,2249.009,245
+Africa,Niger,2023-02-16,362.79,315
+Africa,Nigeria,2023-02-16,1219.28,3155
+Asia,North Korea,2023-02-16,0.038,6
+Europe,North Macedonia,2023-02-16,165615.211,9653
+Europe,Norway,2023-02-16,272073.583,5152
+Asia,Oman,2023-02-16,87286.454,4628
+Asia,Pakistan,2023-02-16,6685.639,30641
+Oceania,Palau,2023-02-16,331121.433,9
+Asia,Palestine,2023-02-16,133946.251,5708
+North America,Panama,2023-02-16,233784.469,8600
+Oceania,Papua New Guinea,2023-02-16,4613.401,670
+South America,Paraguay,2023-02-16,118982.501,19843
+South America,Peru,2023-02-16,131700.918,219311
+Asia,Philippines,2023-02-16,35264.001,65999
+Europe,Poland,2023-02-16,160475.773,118809
+Europe,Portugal,2023-02-16,541990.605,26117
+Asia,Qatar,2023-02-16,183018.562,686
+Europe,Romania,2023-02-16,169436.861,67650
+Europe,Russia,2023-02-16,150720.592,387725
+Africa,Rwanda,2023-02-16,9666.319,1468
+Africa,Saint Helena,2023-02-16,401036.845,NA
+North America,Saint Kitts and Nevis,2023-02-16,138336.025,46
+North America,Saint Lucia,2023-02-16,166129.247,409
+North America,Saint Pierre and Miquelon,2023-02-16,586576.041,2
+North America,Saint Vincent and the Grenadines,2023-02-16,92238.286,123
+Oceania,Samoa,2023-02-16,73753.316,29
+Europe,San Marino,2023-02-16,697358.267,122
+Africa,Sao Tome and Principe,2023-02-16,27617.385,77
+Asia,Saudi Arabia,2023-02-16,22763.52,9598
+Africa,Senegal,2023-02-16,5134.424,1971
+Europe,Serbia,2023-02-16,361297.245,17754
+Africa,Seychelles,2023-02-16,472908.013,172
+Africa,Sierra Leone,2023-02-16,901.726,126
+Asia,Singapore,2023-02-16,394180.828,1722
+Europe,Slovakia,2023-02-16,471893.37,20991
+Europe,Slovenia,2023-02-16,624985.435,7065
+Oceania,Solomon Islands,2023-02-16,33930.623,153
+Africa,Somalia,2023-02-16,1552.72,1361
+Africa,South Africa,2023-02-16,67787.84,102595
+Asia,South Korea,2023-02-16,586860.597,33832
+Africa,South Sudan,2023-02-16,1683.104,138
+Europe,Spain,2023-02-16,289094.06,118976
+Asia,Sri Lanka,2023-02-16,30781.073,16829
+Africa,Sudan,2023-02-16,1360.557,5011
+South America,Suriname,2023-02-16,133043.495,1400
+Europe,Sweden,2023-02-16,255670.658,23634
+Europe,Switzerland,2023-02-16,504529.79,14202
+Asia,Syria,2023-02-16,2597.079,3164
+Asia,Taiwan,2023-02-16,413455.166,17319
+Asia,Tajikistan,2023-02-16,1787.037,125
+Africa,Tanzania,2023-02-16,653.076,846
+Asia,Thailand,2023-02-16,65938.971,33894
+Asia,Timor,2023-02-16,17459.207,138
+Africa,Togo,2023-02-16,4448.563,290
+Oceania,Tonga,2023-02-16,157214.107,13
+North America,Trinidad and Tobago,2023-02-16,123125.869,4336
+Africa,Tunisia,2023-02-16,93120.362,29326
+Asia,Turkey,2023-02-16,199700.876,101492
+North America,Turks and Caicos Islands,2023-02-16,143266.413,38
+Oceania,Tuvalu,2023-02-16,247463.608,NA
+Africa,Uganda,2023-02-16,3607.735,3630
+Europe,Ukraine,2023-02-16,143382.719,119139
+Asia,United Arab Emirates,2023-02-16,111293.363,2348
+Europe,United Kingdom,2023-02-16,360568.785,218405
+North America,United States,2023-02-16,304684.912,1116773
+South America,Uruguay,2023-02-16,302023.842,7617
+Asia,Uzbekistan,2023-02-16,7244.211,1637
+Oceania,Vanuatu,2023-02-16,36768.847,14
+Europe,Vatican,2023-02-16,35891.089,NA
+South America,Venezuela,2023-02-16,19500.101,5851
+Asia,Vietnam,2023-02-16,117396.426,43186
+Oceania,Wallis and Futuna,2023-02-16,295532.942,7
+Asia,Yemen,2023-02-16,354.487,2159
+Africa,Zambia,2023-02-16,17100.741,4051
+Africa,Zimbabwe,2023-02-16,16154.001,5662
