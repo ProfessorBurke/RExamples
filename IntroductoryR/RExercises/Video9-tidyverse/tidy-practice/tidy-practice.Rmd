@@ -1,0 +1,289 @@
+---
+title: "Introduction to the tidyverse"
+output: learnr::tutorial
+allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+ai_data <- 
+  read_csv("data/private-investment-in-artificial-intelligence-by-focus-area.csv",
+           skip = 1,
+           col_names = c("Entity", "Code", "Year", "Invest"))
+
+```
+
+## Welcome!
+
+```{r fig.margin = TRUE, echo = FALSE, fig.width=3, out.width="100%", fig.align="right"}
+knitr::include_graphics("images/tidyverse.jpg")
+```
+
+
+*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 9 Introduction to the tidyverse](https://youtu.be/xGWxtvweGac).*
+
+*If you haven't already watched [the video](https://youtu.be/xGWxtvweGac), you might want to watch it first before trying these exercises.*
+
+*Make sure you have the learnr, gradethis, and the tidyverse packages installed.*
+
+*Here is the source for the data we're working with:
+[Our World in Data's artificial intelligence data](https://ourworldindata.org/artificial-intelligence)
+Daniel Zhang, Nestor Maslej, Erik Brynjolfsson, John Etchemendy, Terah Lyons, 
+James Manyika, Helen Ngo, Juan Carlos Niebles, Michael Sellitto, Ellie Sakhaee, 
+Yoav Shoham, Jack Clark, and Raymond Perrault, “The AI Index 2022 Annual 
+Report,” AI Index Steering Committee, Stanford Institute for Human-Centered AI, 
+Stanford University, March 2022.
+*
+
+
+## Tidy format
+
+Let's review tidy format, first.  Here are two tables.  The following questions refer to these two tables.
+
+temperatures1
+
+```{r }
+
+temperatures1 <- data.frame(City = c("Boston", "Providence", "Worcester","Boston", "Providence", "Worcester"), Date = c("1/1/2024","1/1/2024","1/1/2024","1/2/2024","1/2/2024","1/2/2024"), Temperature = c(10, 13, 7, 35, 40, 20))
+temperatures1
+
+```
+
+
+temperatures2
+
+```{r }
+
+temperatures2 <- data.frame(City = c("Boston", "Providence", "Worcester"),January_1_2024 = c(10, 13, 7), January_2_2024 = c(35, 40, 20))
+temperatures2
+
+```
+
+
+```{r quiz}
+quiz(
+  question("In the temperatures1 table, Date is an example of:",
+    answer("an observation"),
+    answer("a variable", correct = TRUE),
+    answer("a value"),
+    answer("a row")
+  ),
+  question("In the temperatures2 table, January_1_2024 is an example of:",
+    answer("an observation"),
+    answer("a variable", correct = TRUE),
+    answer("a value"),
+    answer("a row")
+  ),
+  question("Choose the correct statement(s):",
+    answer("temperatures1 is not in tidy format"),
+    answer("temperatures2 is not in tidy format", correct = TRUE),
+    answer("temperatures2 has data embedded in column names", correct = TRUE),
+    answer("temperatures1 has data embedded in column names"),
+    answer("In the temperature data, an observation is composed of a city name, a date, and a temperature", correct = TRUE)
+  )
+)
+
+```
+
+
+## Filtering rows
+
+*The dplyr filter function will allow you to extract rows from your table based on some criterion (expressed with a logical condition).*
+
+The ai_data table has been read in with columns Entity, Code, Year, and Invest.
+
+Use the filter function to extract all of the rows of the ai_data table that have an Invest value of over one billion.  (Do not store the result in a new dataframe, or if you do, make the name of the dataframe the last line of your script.)
+
+
+```{r filter, exercise=TRUE}
+
+
+```
+
+``` {r filter-hint-1}
+The filter function takes the table as the first parameter and the
+logical condition you're filtering by as the second parameter.
+```
+
+``` {r filter-hint-2}
+Remember you can refer to columns by their names.
+```
+
+
+``` {r filter-hint-3}
+Your logical condition should be 
+Invest > 1000000000
+```
+
+
+``` {r filter-hint-4}
+You could either pass ai_data in as the first argument to filter,
+or you could pipe it in with ai_data |> filter()
+If you pipe, then your condition is the first argument.
+```
+
+
+``` {r filter-solution}
+
+ai_data |> filter(Invest > 1000000000)
+
+```
+
+
+``` {r filter-check}
+   grade_result(
+    pass_if(~ (nrow(.result) == 74), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+## Selecting columns
+
+*The dplyr select function will allow you to extract columns from your table using their names, or extract all columns but a column by negating its name.*
+
+The ai_data table has been read in with columns Entity, Code, Year, and Invest.
+
+Use the select function to select all columns except Code, which contains only NA values.
+
+
+```{r select, exercise=TRUE}
+
+
+```
+
+``` {r select-hint-1}
+The select function takes the table as the first parameter and then all 
+other parameters are the columns you want to include.
+```
+
+``` {r select-hint-2}
+Remember you can refer to columns by their names.
+```
+
+
+``` {r select-hint-3}
+You want the Entity, Year, and Invest columns.
+(Or, put another way, you don't want the Code column.)
+```
+
+
+``` {r select-hint-4}
+You could either pass ai_data in as the first argument to select,
+or you could pipe it in with ai_data |> select()
+If you pipe, then you don't include the dataframe as the first argument.
+```
+
+
+``` {r select-solution}
+
+ai_data |> select(-Code)
+
+```
+
+
+``` {r select-check}
+   grade_result(
+    pass_if(~ (length(.result) == 3), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+
+## Mutating a dataframe
+
+*The dplyr mutate function will allow you to add columns to a dataframe by specifying the operation to apply to each row to produce the value for the new column.*
+
+The ai_data table has been read in with columns Entity, Code, Year, and Invest.
+
+Use the mutate function to add an Invest_millions column to the dataframe, computed by dividing the Invest columns by one million.
+
+
+```{r mutate, exercise=TRUE}
+
+
+```
+
+``` {r mutate-hint-1}
+The mutate function takes the table as the first parameter and then the
+second parameter is the name of the new column, =, and the operation
+```
+
+``` {r mutate-hint-2}
+The operation is Invest / 1000000
+```
+
+
+``` {r mutate-hint-3}
+You could either pass ai_data in as the first argument to mutate,
+or you could pipe it in with ai_data |> mutate()
+If you pipe, then you don't include the dataframe as the first argument.
+```
+
+
+``` {r mutate-solution}
+
+ai_data |>  mutate(Invest_Millions = Invest / 1000000)
+
+```
+
+
+``` {r mutate-check}
+   grade_result(
+    pass_if(~ (length(.result) == 5 & colnames(.result) == c("Entity", "Code", "Year", "Invest", "Invest_Millions")), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+
+
+## Using the pipe
+
+*The tidyverse functions filter, select, and mutate take a dataframe (or tibble) as the first argument.  The pipe |> will supply the result of operation to the left as the first argument to the function on the right, meaning you do not need to store intermediate results. *
+
+The ai_data table has been read in with columns Entity, Code, Year, and Invest.
+
+Put together everything we've done prior to this with the pipe.  This exercise will be graded on your code, not on your solution, so you'll need to write exactly what's requested.
+
+Pipe the ai_data table to a filter command, filtering only Invest values greater than one billion.  You should then select from that the Entity, Year, and Invest columns. (Be sure to specify the three columns -- don't specify the column you want excluded.)  Then mutate that table to include an Invest_Millions column, which is the Invest column divided by one million.
+
+
+```{r pipe, exercise=TRUE}
+
+
+```
+
+``` {r pipe-hint-1}
+Refer to prior exercises and hints to know how to complete each part of this.
+```
+
+``` {r pipe-hint-2}
+Begin with ai_data and pipe it to filter, like this:
+ai_data |> filter(Invest > 1000000000)
+```
+
+
+``` {r pipe-hint-3}
+Pipe the result of the last hint to select, 
+and then pipe the result of that to mutate.
+```
+
+
+``` {r pipe-solution}
+
+ai_data |> filter(Invest > 1000000000) |> select(Entity, Year, Invest) |> mutate(Invest_Millions = Invest / 1000000)
+
+```
+
+
+``` {r pipe-check}
+   grade_this_code()
+```
+
+
