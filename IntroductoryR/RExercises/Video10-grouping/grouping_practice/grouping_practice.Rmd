@@ -1,5 +1,5 @@
 ---
-title: "Introduction to the tidyverse"
+title: "Grouping, arranging, and summarizing with the Tidyverse"
 output: learnr::tutorial
 allow_skip: true
 runtime: shiny_prerendered
