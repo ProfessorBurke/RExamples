@@ -1,0 +1,300 @@
+---
+title: "Using map functions in the Tidyverse"
+output: learnr::tutorial
+allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+civil_rights <-  read_csv("data/cirights.csv")
+canada_data <- civil_rights |> filter(country=="Canada")
+canada_numbers <- canada_data |> select(-country)
+european_countries <- list(civil_rights |> filter(country=="Norway") |> select(-country),
+                           civil_rights |> filter(country=="Sweden") |> select(-country),
+                           civil_rights |> filter(country=="France") |> select(-country),
+                           civil_rights |> filter(country=="Italy") |> select(-country) )
+
+
+```
+
+## Welcome!
+
+```{r fig.margin = TRUE, echo = FALSE, fig.width=3, out.width="100%", fig.align="right"}
+knitr::include_graphics("images/tidyverse3.jpg")
+```
+
+
+*These exercises align with the [Design Code Debug Repeat](https://www.youtube.com/@DesignCodeDebugRepeat ) [Introductory R video 11 the purrr map functions in the tidyverse](https://www.youtube.com/watch?v=aIXvKCQA4qI).*
+
+*If you haven't already watched [the video](https://www.youtube.com/watch?v=aIXvKCQA4qI), you might want to watch it first before trying these exercises.*
+
+*Make sure you have the learnr, gradethis, and the tidyverse packages installed.*
+
+*Here is the source for the data we're working with: The CIRights data set
+Mark, Skip and Cingranelli, David and Filippov, Mikhail and Richards, David L., 
+The CIRIGHTS Data Project Scoring Manual V2.11.06.23 (November 6, 2023). 
+Available at SSRN: [https://ssrn.com/abstract=4625036](https://ssrn.com/abstract=4625036) or [http://dx.doi.org/10.2139/ssrn.4625036](http://dx.doi.org/10.2139/ssrn.4625036)
+Retrieved from
+[https://cirights.com/](https://cirights.com/)
+The data was downloaded and saved as a csv file called cirights.csv.
+*
+
+## The map functions
+
+Let's review the map functions, first.
+
+
+```{r quiz}
+quiz(
+  question("Which map function takes a dataframe as an argument?",
+    answer("map"),
+    answer("map_df"),
+    answer("map_dbl"),
+    answer("map_chr"),
+    answer("map_lgl"),
+    answer("All of these", correct = TRUE),
+    answer("None of these")
+  ),
+  question("Which map function returns a dataframe?",
+    answer("map"),
+    answer("map_df", correct = TRUE),
+    answer("map_dbl"),
+    answer("map_chr"),
+    answer("map_lgl"),
+    answer("All of these"),
+    answer("None of these")
+  ),
+  question("Choose the correct statement(s):",
+    answer("For a function that takes a dataframe as an argument and returns a vector of numerics, I should use map_dbl", correct = TRUE),
+    answer("For a function that takes a dataframe as an argument and returns a vector of numerics, I should use map_df"),
+    answer("For a function that takes a list as an argument and returns a vector of numerics, I should use map_dbl", correct = TRUE),
+    answer("For a function that takes a vector as an argument and returns a vector of TRUE/FALSE values, I should use map_lgl", correct = TRUE),
+    answer("For a function that takes a character vector as an argument and returns a dataframe, I should use map_chr")
+  )
+)
+
+```
+
+
+
+## map_dbl with a vector input
+
+*The CIRIGHTS data has been read in to a table called civil_rights, and the data for Canada has been extracted into a table called canada_data.*
+
+*The map_dbl function can take a list, dataframe, or vector as input and returns a vector of numeric values.  Therefore, the function you write to use with map_dbl should take a single value as input and return a single numeric value as output.  What a "single value" as input means depends on whether your input type is a vector, list, or dataframe.  If it's a numeric vector, then your function should take a single number as input.*
+
+Write a function called double that takes a single number as input and evaluates to double that number (the number multiplied by 2).  The last line of your script should use map_dbl to apply the double function to the speech column in the canada dataframe.  Do not assign the result to a variable.
+
+```{r map_dbl1, exercise=TRUE}
+
+
+```
+
+``` {r map_dbl1-hint-1}
+You can pipe the canada speech column to the map_dbl function, like this:
+canada_data$speech |> map_dbl()
+```
+
+``` {r map_dbl1-hint-2}
+Remember, to define a function, use the function name, the assignment
+operator, and then the word function with parameters in parentheses, like this:
+double <- function(value) {
+  
+```
+
+
+``` {r map_dbl1-hint-3}
+Your whole function should be:
+double <- function(value) {
+  value * 2
+}
+```
+
+``` {r map_dbl1-solution}
+double <- function(value) {
+  value * 2
+}
+
+canada_data$speech |> map_dbl(double)
+
+```
+
+
+``` {r map_dbl1-check}
+   grade_result(
+    pass_if(~ (.result[1] == 2 & .result[2] == 4), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+
+
+## map_dbl with a dataframe input
+
+*The CIRIGHTS data has been read in to a table called civil_rights, and the data for Canada has been extracted into a table called canada_data.  Another dataframe, called canada_numbers, consists of only the numeric columns from canada_data.*
+
+*The map_dbl function can take a list, dataframe, or vector as input and returns a vector of numeric values.  Therefore, the function you write to use with map_dbl should take a single value as input and return a single numeric value as output.  What a "single value" as input means depends on whether your input type is a vector, list, or dataframe.  If it's a dataframe, then your function should take a single column (a vector) as input.*
+
+Write a function called mean_average that takes a numeric vector as input and evaluates to the mean of that vector (apply the mean function to the input vector).  The last line of your script should use map_dbl to apply the mean_average function to the canada_numbers dataframe.  Do not assign the result to a variable.
+
+```{r map_dbl2, exercise=TRUE}
+
+
+```
+
+``` {r map_dbl2-hint-1}
+You can pipe the canada_numbers dataframe to the map_dbl function, like this:
+canada_numbers |> map_dbl()
+```
+
+``` {r map_dbl2-hint-2}
+Remember, to define a function, use the function name, the assignment
+operator, and then the word function with parameters in parentheses, like this:
+mean_average <- function(df_col) {
+  
+```
+
+
+``` {r map_dbl2-hint-3}
+Your whole function should be:
+mean_average <- function(df_col) {
+  mean(df_col)
+}
+```
+
+``` {r map_dbl2-solution}
+mean_average <- function(df_col) {
+  mean(df_col)
+}
+
+canada_numbers |> map_dbl(mean_average)
+
+```
+
+
+``` {r map_dbl2-check}
+   grade_result(
+    pass_if(~ (round(.result[[1]]) == 2001 & round(.result[[2]]) == 194), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+## map_df with a vector input
+
+*There are three tables in the /data folder called cirights_2019.csv, cirights_2020.csv, and cirights_2021.csv.  These tables have the same format (same columns) but contain data for different years.*
+
+*The map_df function can take a list, dataframe, or vector as input and returns a dataframe.  Therefore, the function you write to use with map_df should take a single value as input and return a dataframe as output.  What a "single value" as input means depends on whether your input type is a vector, list, or dataframe.  If it's a vector of character data, then your function should take a single character variable (a string, or text) as input.*
+
+Write a function called read_csv_to_df that takes a character variable, the path to a dataframe, as input and returns the dataframe by reading it in with read_csv.  The last line of your script should use map_df to apply the mean_average function to the filepaths vector (defined for you at the start of the script).  Do not assign the result to a variable.
+
+```{r map_df, exercise=TRUE}
+filepaths <- c("data/cirights_2019.csv", "data/cirights_2020.csv", "data/cirights_2021.csv")
+
+```
+
+``` {r map_df-hint-1}
+You can pipe the vector of pathnames to the map_df function, like this:
+filepaths |> map_df()
+```
+
+``` {r map_df-hint-2}
+Remember, to define a function, use the function name, the assignment
+operator, and then the word function with parameters in parentheses, like this:
+read_csv_to_df <- function(filepath) {
+  
+```
+
+
+``` {r map_df-hint-3}
+Your whole function should be:
+read_csv_to_df <- function(filepath) {
+  read_csv(filepath)
+}
+```
+
+``` {r map_df-solution}
+read_csv_to_df <- function(filepath) {
+  read_csv(filepath)
+}
+
+filepaths <- c("data/cirights_2019.csv", "data/cirights_2020.csv", "data/cirights_2021.csv")
+filepaths |> map_df(read_csv_to_df)
+
+
+```
+
+
+``` {r map_df-check}
+   grade_result(
+    pass_if(~ (.result$country[1] == "Zambia"), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
+## map_df with a list input
+
+*he CIRIGHTS data has been read in to a table called civil_rights.  A list has been created of four dataframes, one with data for each of four countries, called european_countries.*
+
+*The map_df function can take a list, dataframe, or vector as input and returns a dataframe.  Therefore, the function you write to use with map_df should take a single value as input and return a dataframe as output.  What a "single value" as input means depends on whether your input type is a vector, list, or dataframe.  If it's a list of dataframes, then your function should take a dataframe as input.*
+
+Write a function called summarize_columns that takes a dataframe as input and returns a dataframe that is a summary of the input dataframe -- the mean of each column.  Your summarize_columns function should therefore invoke the mean_average function (given) on each column of the parameter dataframe.  The last line of your script should use map_df to apply the summarize_columns function to the european_countries list.  Do not assign the result to a variable.
+
+```{r map_df2, exercise=TRUE}
+
+mean_average <- function(df_col) {
+  mean(df_col)
+}
+
+
+```
+
+``` {r map_df2-hint-1}
+You can pipe the list of dataframes to the map_df function, like this:
+european_countries |> map_df()
+```
+
+``` {r map_df2-hint-2}
+Remember, to define a function, use the function name, the assignment
+operator, and then the word function with parameters in parentheses, like this:
+summarize_columns <- function(df)
+  
+```
+
+
+``` {r map_df2-hint-3}
+Your whole function should be:
+summarize_columns <- function(df) {
+  map_dbl(df, mean_average)
+}
+```
+
+``` {r map_df2-solution}
+mean_average <- function(df_col) {
+  mean(df_col)
+}
+
+summarize_columns <- function(df) {
+  map_dbl(df, mean_average)
+}
+
+european_countries |> map_df(summarize_columns)
+
+
+```
+
+
+``` {r map_df2-check}
+   grade_result(
+    pass_if(~ (round(.result$ciri[1]) == 491), "Well done! "),
+    fail_if(~TRUE, "Try looking at the hints! ")
+  )
+```
+
+
