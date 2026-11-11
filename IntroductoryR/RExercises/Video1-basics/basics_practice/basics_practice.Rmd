@@ -9,6 +9,7 @@ runtime: shiny_prerendered
 library(learnr)
 library(gradethis)
 library(readr)
+library(learnrhash)
 knitr::opts_chunk$set(echo = FALSE)
 ai_invest <- read_csv("data/private-investment-in-artificial-intelligence-by-focus-area.csv", skip = 1, col_names = c("Entity", "Code", "Year", "Invest"))
 ai_2017 <- ai_invest[ai_invest$Year == 2017,]$Invest
@@ -249,4 +250,9 @@ quiz(
 )
 
 ```
+## Submit Your Work
 
+When you have completed all the exercises, click the button below to generate your submission key. Copy the key and paste it into the assignment submission box on our course page.
+
+```{r context="server"}
+learnrhash::encoder_logic()
