@@ -261,7 +261,7 @@ learnrhash::encoder_logic()
 
 ```{r encode, echo=FALSE}
 learnrhash::encoder_ui(
-  ui_before = NULL,
-  url = NULL
+  ui_before = "",
+  url = ""
 )
 ```
