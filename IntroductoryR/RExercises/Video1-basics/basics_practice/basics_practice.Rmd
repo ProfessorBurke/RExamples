@@ -252,13 +252,16 @@ quiz(
 ```
 ## Submit Your Work
 
+
 When you have completed all the exercises, click the button below to generate your submission key. Copy the key and paste it into the assignment submission box on our course page.
 
 ```{r context="server"}
 learnrhash::encoder_logic()
-
 ```
 
 ```{r encode, echo=FALSE}
-learnrhash::encoder_ui()
+learnrhash::encoder_ui(
+  ui_before = NULL,
+  url = NULL
+)
 ```
